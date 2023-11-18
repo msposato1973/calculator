@@ -18,6 +18,7 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
@@ -32,17 +33,22 @@
 		</dependency>
 	</dependencies>
   
-	 <build>
-			<finalName>${project.artifactId}</finalName>
-	        <plugins>
-	            <plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<source>${java.build}</source>
-						<target>${java.build}</target>
-					</configuration>
-				</plugin>
-	        </plugins>
-	    </build>
+	<build>
+	    <finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-failsafe-plugin</artifactId>
+	        </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
